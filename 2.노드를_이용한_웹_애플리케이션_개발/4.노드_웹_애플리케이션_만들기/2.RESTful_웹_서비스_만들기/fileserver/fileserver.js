@@ -16,5 +16,9 @@ var server = http.createServer(function(req, res) {
 		res.end();
 	});*/
 	stream.pipe(res);//res.end()를 알아서 호출해줌
+	stream.on('error', function(err) {
+		res.statusCode = 500;
+		res.end('Internal Server Error');
+	});
 });
 server.listen(3000);
