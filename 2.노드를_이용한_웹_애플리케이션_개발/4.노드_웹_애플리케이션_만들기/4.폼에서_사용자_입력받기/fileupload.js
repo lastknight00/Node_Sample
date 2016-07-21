@@ -1,6 +1,6 @@
 var http = require('http');
 var formidable = require('formidable');
-var form = new formidable.IncomingForm();
+	var form = new formidable.IncomingForm();
 
 var server = http.createServer(function(req, res) {
 	switch(req.method) {
